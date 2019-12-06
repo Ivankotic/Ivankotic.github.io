@@ -13,6 +13,7 @@ function f() {
         }
         
         v = sum / l;
+        v = v.toFixed(5);
     }
 
     $('#o').html(v);

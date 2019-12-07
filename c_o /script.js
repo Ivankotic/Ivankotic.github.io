@@ -22,7 +22,7 @@ function f() {
         }
         else {
             $.ajax({
-                url: 'http://ivan174.000webhostapp.com/index.php?n=' + vl,
+                url: 'https://ivan174.000webhostapp.com/index.php?n=' + vl,
                 success: function(data) {
 
                 }  

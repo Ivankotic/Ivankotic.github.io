@@ -15,7 +15,7 @@
     $(document).ready(function() {
         function r() {
             $.ajax({
-                url: "http://test174test.000webhostapp.com/r.php",
+                url: "https://test174test.000webhostapp.com/r.php",
                 success: function(data){
                     $("#m").html(data);
                 }
@@ -29,7 +29,7 @@
 			}
 			else {
 				$.ajax({
-					url: "http://test174test.000webhostapp.com/send.php?s=" + $("#text").val()
+					url: "https://test174test.000webhostapp.com/send.php?s=" + $("#text").val()
 				});
 			}
 			$("#text").val("");

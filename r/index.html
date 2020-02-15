@@ -1,1 +1,47 @@
-<script>document.location.href = 'http://ivan174.000webhostapp.com/chat/'</script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <style>
+    #m {
+        border: red solid 1px;
+    }
+    </style>
+</head>
+<body>
+    <script>
+    $(document).ready(function() {
+        function r() {
+            $.ajax({
+                url: "http://test174test.000webhostapp.com/c/re.php?e=true",
+                success: function(data){
+                    $("#m").html(data);
+                }
+            });
+        }
+        setInterval(r, 500);
+
+        $("#s").click(function() {
+			if ($("#text").val() == "") {
+				alert("сообщение не должно быть пустым");
+			}
+			else {
+				$.ajax({
+					url: "http://test174test.000webhostapp.com/c/send.php?s=" + $("#text").val()
+				});
+			}
+        });
+    });
+    </script>
+
+    <input id="text" placeholder="Текст" type="text" />
+    <button id="s">отправить</button>
+    <br>
+    <br>
+
+    <div id="m">
+    </div>
+</body>
+</html>

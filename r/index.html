@@ -25,7 +25,7 @@
     $(document).ready(function() {
         function r() {
             $.ajax({
-                url: "http://f0403333.xsph.ru/chat/r.php",
+                url: "https://f0403333.xsph.ru/chat/r.php",
                 success: function(data){
                     $("#m").html(data);
                 }
@@ -39,7 +39,7 @@
 			}
 			else {
 				$.ajax({
-					url: "http://f0403333.xsph.ru/chat/send.php?s=" + $("#text").val()
+					url: "https://f0403333.xsph.ru/chat/send.php?s=" + $("#text").val()
 				});
 			}
 			$("#text").val("");

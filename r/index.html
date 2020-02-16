@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>chat</title>
-    <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="http:/code.jquery.com/jquery-3.4.1.min.js"></script>
     <style>
     #m {
         border: red solid 1px;
@@ -25,7 +25,7 @@
     $(document).ready(function() {
         function r() {
             $.ajax({
-                url: "http://f0403333.xsph.ru/chat/r.php",
+                url: "http:/f0403333.xsph.ru/chat/r.php",
                 success: function(data){
                     $("#m").html(data);
                 }
@@ -39,7 +39,7 @@
 			}
 			else {
 				$.ajax({
-					url: "http://f0403333.xsph.ru/chat/send.php?s=" + $("#text").val()
+					url: "http:/f0403333.xsph.ru/chat/send.php?s=" + $("#text").val()
 				});
 			}
 			$("#text").val("");

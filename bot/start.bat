@@ -1,0 +1,2 @@
+start serv
+start run

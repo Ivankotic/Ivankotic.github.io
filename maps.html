@@ -1,13 +1,56 @@
-<style>
-* {
-	margin: 0;
-	padding: 0;
-}
-body > ymaps {
-	width: 100vw !important;
-	height: 100vh !important;
-}
 
-</style>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<script src="https://api-maps.yandex.ru/2.1/?apikey=524b94e2-5559-4c08-8fee-518c774d8864&lang=ru_RU" type="text/javascript">
+		</script>
+	</head>
+	<body>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+		</style>
 
-<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A63173efe34db13b68560fa19e8e9fdae566cfd9523cc93e18ead607580fad7cc&amp;width=320&amp;height=505&amp;lang=ru_RU&amp;scroll=true"></script>
+		<div id="map" style="width: 100vw; height: 100vh"></div>
+	
+		<script type="text/javascript">
+			function createM(name, cords, map){
+				myGeoObject = new ymaps.GeoObject({
+				geometry: {
+					type: "Point",
+					coordinates: cords
+				},
+				properties: {
+					iconContent: name,
+					hintContent: 'метка'
+				}
+				}, {
+					preset: 'islands#blackStretchyIcon',
+					draggable: true
+				});
+   				map.geoObjects.add(myGeoObject);
+			}
+
+
+			ymaps.ready(init);
+			function init(){
+				// Создание карты.
+				var myMap = new ymaps.Map("map", {
+					center: [55.112249, 61.340007],
+					zoom: 17
+				});
+				myMap.setType('yandex#hybrid');
+
+				createM("насосница", [55.108642, 61.318039], myMap)
+				createM("конь", [55.110893, 61.330847], myMap)
+				createM("пруд возле ленты", [55.107073, 61.352216], myMap)
+				createM("подземелье", [55.105196, 61.338043], myMap)
+				createM("камень возле школы", [55.112093, 61.340385], myMap)
+			}
+		</script>
+	</body>
+</html>
